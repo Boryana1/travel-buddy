@@ -1,6 +1,8 @@
 package com.entertainment.travelbuddy.model;
 import jakarta.persistence.*;
 
+import java.util.Scanner;
+
 @Entity
 @Table(name = "user")
 
@@ -28,4 +30,9 @@ public class User {
     public void setId(Long id) {
         this.id = id;
     }
+
+
+    Scanner myObj = new Scanner(System.in);
+    String userName = myObj.next();
+
 }
