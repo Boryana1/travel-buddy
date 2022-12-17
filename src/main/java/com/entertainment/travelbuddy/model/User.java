@@ -136,4 +136,20 @@ public class User {
     public void setProfilePicURL(String profilePicURL) {
         this.profilePicURL = profilePicURL;
     }
+
+    public User() {
+    }
+
+    public User(Long id, Date createdDate, String userName, String password, String firstName, String lastName, String email, Date birthday, String aboutMe, String profilePicURL) {
+        this.id = id;
+        this.createdDate = createdDate;
+        this.userName = userName;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.birthday = birthday;
+        this.aboutMe = aboutMe;
+        this.profilePicURL = profilePicURL;
+    }
 }
