@@ -9,7 +9,7 @@ public class UserController {
 //    Create User Account
     @GetMapping("/sign-up")
     public String signUp(Model model){
-        model.addAllAttributes("user", new User());
+//        model.addAllAttributes("user", new User());
         return "user/register";
     }
 }
