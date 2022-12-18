@@ -22,23 +22,23 @@ public class User {
     private Date createdDate;
 
     @NotBlank(message = "Please create your username.")
-    @Column(name = "name", nullable = false)
+    @Column(name = "userName", nullable = false)
     private String userName;
 
     @NotBlank(message = "Please create a password.")
-    @Column(name = "name", nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
     @NotBlank(message = "Please enter your first name.")
-    @Column(name = "name", nullable = false)
+    @Column(name = "firstName", nullable = false)
     private String firstName;
 
     @NotBlank(message = "Please enter your last name.")
-    @Column(name = "name", nullable = false)
+    @Column(name = "lastName", nullable = false)
     private String lastName;
 
     @NotBlank(message = "Please enter your email address.")
-    @Column(name = "name", nullable = false)
+    @Column(name = "email", nullable = false)
     private String email;
 
     @Column
@@ -47,7 +47,7 @@ public class User {
     private Date birthday;
 
     @NotBlank(message = "Please tell us more about yourself here.")
-    @Column(name = "name", nullable = false)
+    @Column(name = "aboutMe", nullable = false)
     private String aboutMe;
 
 
