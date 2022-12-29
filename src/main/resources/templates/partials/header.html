@@ -9,7 +9,7 @@
 
 <header th:fragment="header">
     <div sec:authorize="isAnonymous()">
-        <nav class="navbar navbar-expand navbar-light" style="background-color: white;">
+        <nav class="navbar navbar-expand navbar-light fixed-top" style="background-color: white">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
                     <ul class="navbar-nav">
@@ -21,6 +21,27 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+            </div>
+        </nav>
+    </div>
+
+    <div sec:authorize="isAuthenticated()">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: ##79dadd">
+            <div class="container-fluid">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" style="font-family: Poppins; font-size: 25px"th:href="@{/user/{username}(username=${#authentication.principal.username})}">Timeline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item  nav-link" style="font-family: Poppins; font-size: 25px"th:href="@{/{username}/friends/requests (username=${#authentication.principal.username})}">Connections</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link pr-3" style="font-family: Poppins; font-size: 25px"th:href="@{/trips}">Upcoming trips</a>
+                    </li>
+                    <form th:action="@{/logout}" th:method="post" class="nav-item" style="font-family: Poppins; font-size: 30px">
+                        <button type="submit" class="btn btn-anchor nav-link">Logout</button>
+                    </form>
+                </ul>
             </div>
         </nav>
     </div>
