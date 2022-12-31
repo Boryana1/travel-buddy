@@ -1,24 +1,24 @@
-package com.codeup.codeencounter;
+package com.entertainment.travelbuddy.services;
 
-import com.codeup.codeencounter.models.UserWithRoles;
-import com.codeup.codeencounter.models.User;
-import com.codeup.codeencounter.repositories.UserRepo;
+import com.entertainment.travelbuddy.model.User;
+import com.entertainment.travelbuddy.model.UserWithRoles;
+import com.entertainment.travelbuddy.repositories.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserDetailsLoader implements UserDetailsService {
-    private final UserRepo userRepo;
+public class UserService implements UserDetailsService {
+    private final UserRepository userRepository;
 
-    public UserDetailsLoader(UserRepo users) {
-        this.userRepo = users;
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepo.findByUsername(username);
+        User user = userRepository.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("No user found for " + username);
         }
