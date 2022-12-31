@@ -22,8 +22,8 @@ public class User {
     private Date createdDate;
 
     @NotBlank(message = "Please create your username.")
-    @Column(name = "userName", nullable = false)
-    private String userName;
+    @Column(name = "username", nullable = false)
+    private String username;
 
     @NotBlank(message = "Please create a password.")
     @Column(name = "password", nullable = false)
@@ -57,6 +57,22 @@ public class User {
     @Column
     private String profilePicURL;
 
+    public User(User user) {
+    }
+
+    public User(Long id, Date createdDate, String username, String password, String firstName, String lastName, String email, Date birthday, String aboutMe, String profilePicURL) {
+        this.id = id;
+        this.createdDate = createdDate;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.birthday = birthday;
+        this.aboutMe = aboutMe;
+        this.profilePicURL = profilePicURL;
+    }
+
     public Long getId() {
         return id;
     }
@@ -73,12 +89,12 @@ public class User {
         this.createdDate = createdDate;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -137,19 +153,4 @@ public class User {
         this.profilePicURL = profilePicURL;
     }
 
-    public User() {
-    }
-
-    public User(Long id, Date createdDate, String userName, String password, String firstName, String lastName, String email, Date birthday, String aboutMe, String profilePicURL) {
-        this.id = id;
-        this.createdDate = createdDate;
-        this.userName = userName;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.birthday = birthday;
-        this.aboutMe = aboutMe;
-        this.profilePicURL = profilePicURL;
-    }
 }
