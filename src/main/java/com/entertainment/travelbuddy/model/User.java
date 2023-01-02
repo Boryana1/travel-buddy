@@ -57,6 +57,8 @@ public class User {
     @Column
     private String profilePicURL;
 
+    public User(){}
+
     public User(User user) {
     }
 
